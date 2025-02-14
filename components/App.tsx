@@ -10,8 +10,8 @@ const App = () => {
   }
 
   return (
-    <div className="w-full pt-20 px-3">
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3 justify-items-center gap-2">
+    <div className="w-full pt-20 px-3 pb-3">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 justify-items-center gap-2">
         {questions.map(({id, question, answer}) => (
           <div 
             key={id} 

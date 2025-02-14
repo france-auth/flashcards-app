@@ -3,7 +3,7 @@ import App from "@/components/App"
 
 export default function Home() {
   return (
-    <div className="relative w-full flex flex-col items-center bg-white">
+    <div className="overflow-y-hidden relative w-full flex flex-col items-center bg-white">
       <Header />
       <App />
     </div>
