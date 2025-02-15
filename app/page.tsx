@@ -7,11 +7,9 @@ import { JSX, useState } from "react";
 
 export default function Home(): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [cardColor, setCardColor] = useState<string>("bg-red-500");
+  const [cardColor, setCardColor] = useState<string>("red");
 
-  const handleColor = (value: string) => {
-    setCardColor(value);
-  }
+  const handleColor = (value: string) => setCardColor(value);
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
   
@@ -19,7 +17,7 @@ export default function Home(): JSX.Element {
     <div className="overflow-y-hidden relative w-full flex flex-col items-center bg-white">
       <Header onModalOpen={handleOpen} />
       <App cardColor={cardColor} />
-      <Settings onModalClose={handleClose} isModalOpen={isOpen} handleColor={handleColor} />
+      <Settings cardColor={cardColor} onModalClose={handleClose} isModalOpen={isOpen} handleColor={handleColor} />
     </div>
   );
 }

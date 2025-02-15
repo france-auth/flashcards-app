@@ -2,11 +2,12 @@ import { colors } from "@/data";
 
 interface SettingsProps {
   isModalOpen: boolean;
+  cardColor: string;
   onModalClose: () => void;
   handleColor: (value: string) => void;
 }
 
-const Settings = ({ isModalOpen, onModalClose, handleColor }: SettingsProps) => {
+const Settings = ({ isModalOpen, cardColor, onModalClose, handleColor }: SettingsProps) => {
   return (
     <div className="w-full">
       {isModalOpen ? (<div className={`${isModalOpen ? 'fixed' : 'hidden'} inset-0 bg-gray-100 bg-opacity-20 backdrop-brightness-50 flex justify-center items-center z-[999] px-16`}>
@@ -26,11 +27,12 @@ const Settings = ({ isModalOpen, onModalClose, handleColor }: SettingsProps) => 
             <select 
               name="colors" 
               title="colors"  
+              value={cardColor}
               onChange={(e) => handleColor(e.target.value)}
               className="max-w-max py-2 px-3 border-[0.5px] border-gray-600 rounded-lg"
             >
-              {colors.map(({color, value }, id: number) => (
-                <option key={id} value={value}>
+              {colors.map(({ color }, id: number) => (
+                <option key={id} value={color}>
                   {color}
                 </option>
               ))}
