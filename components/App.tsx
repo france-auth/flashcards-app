@@ -21,7 +21,7 @@ const App: React.FC<ColorProp> = ({ cardColor }) => {
             key={id} 
             className={`h-36 sm:h-40 lg:h-48 w-full grid col-span-1 items-center rounded-md border-[0.5px] border-gray-600 p-6 
               ${selectedCard === id 
-                ? `${cardColor} font-semibold transition-all duration-500 rotate-clockwise`
+                ? `${cardColor !== 'bg-red-500' ? cardColor : 'bg-red-500'} font-semibold transition-all duration-500 rotate-clockwise`
                 : "bg-gray-100 rotate-back duration-300 transition-all"}`}
             onClick={() => handleClick(id)}
           >
