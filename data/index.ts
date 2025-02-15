@@ -133,3 +133,42 @@ export const questions = [
     answer: "They help React identify which items have changed, added, or removed"
   }
 ];
+
+interface ColorProps {
+  color: string;
+  value: string;
+}
+export const colors: ColorProps[] = [
+{
+    color: "red",
+    value: "bg-red-500"
+  },
+  {
+    color: "orange",
+    value: "bg-orange-500"
+  },
+  {
+    color: "yellow",
+    value: "bg-yellow-500"
+  },
+  {
+    color: "green",
+    value: "bg-green-500"
+  },
+  {
+    color: "cyan",
+    value: "bg-cyan-500"
+  },
+  {
+    color: "blue",  // Assuming blue is included for completeness, as it wasn't in the original list.
+    value: "bg-blue-500"
+  },
+  {
+    color: "purple",
+    value: "bg-purple-500"
+  },
+  {
+    color: "pink",
+    value: "bg-pink-500"
+  }
+]

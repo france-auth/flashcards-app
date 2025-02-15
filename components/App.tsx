@@ -1,9 +1,13 @@
 "use client"
 
 import { questions } from "@/data"
-import { useState } from "react"
+import React, { useState } from "react"
 
-const App = () => {
+interface ColorProp {
+  cardColor: string;
+}
+
+const App: React.FC<ColorProp> = ({ cardColor }) => {
   const [selectedCard, setSelectedCard] = useState<number>(0);
   const handleClick = (id: number) => {
     setSelectedCard(id === selectedCard ? 0 : id)
@@ -17,12 +21,12 @@ const App = () => {
             key={id} 
             className={`h-36 sm:h-40 lg:h-48 w-full grid col-span-1 items-center rounded-md border-[0.5px] border-gray-600 p-6 
               ${selectedCard === id 
-                ? "bg-yellow-500 font-semibold transition-all duration-500 rotate-clockwise" 
+                ? `${cardColor} font-semibold transition-all duration-500 rotate-clockwise`
                 : "bg-gray-100 rotate-back duration-300 transition-all"}`}
             onClick={() => handleClick(id)}
           >
             {selectedCard !== id ? (
-              <p className="rotate-back text-center text-sm sm:text-[15px] md:text-base lg:text-lg">{question}</p>
+              <p className="rotate-back transition-all duration-100 text-center text-sm sm:text-[15px] md:text-base lg:text-lg">{question}</p>
             ) : (
               <p className="rotate-clockwise transition-all duration-100 text-center font-semibold text-sm sm:text-[15px] md:text-base lg:text-lg">{answer}</p>
             )}
